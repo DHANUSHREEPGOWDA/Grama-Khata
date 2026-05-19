@@ -1,4 +1,3 @@
-
 # Grama Khata — Digital Micro Finance Ledger
 
 <p align="center">
@@ -22,9 +21,34 @@
 
 ## Screenshots
 
+### App Screens
 
 <p align="center">
-  <em>Customer List &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Customer Detail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dashboard</em>
+  <img src="customer_list.png" width="18%" alt="Customer List Screen" />
+  &nbsp;
+  <img src="customer_detail.png" width="18%" alt="Customer Detail Screen" />
+  &nbsp;
+  <img src="dashboard.png" width="18%" alt="Dashboard Screen" />
+  &nbsp;
+  <img src="add_customer.png" width="18%" alt="Add Customer Dialog" />
+  &nbsp;
+  <img src="add_transaction.png" width="18%" alt="Add Transaction Dialog" />
+</p>
+
+<p align="center">
+  <sub>Customer List &nbsp;&nbsp;&nbsp; Customer Detail &nbsp;&nbsp;&nbsp; Dashboard &nbsp;&nbsp;&nbsp; Add Customer &nbsp;&nbsp;&nbsp; Add Transaction</sub>
+</p>
+
+---
+
+### Running in Android Studio
+
+<p align="center">
+  <img src="android_studio_running.png" width="90%" alt="App running in Android Studio emulator" />
+</p>
+
+<p align="center">
+  <sub>GramaKhata running on Medium Phone API 35 emulator in Android Studio</sub>
 </p>
 
 ---
@@ -130,7 +154,7 @@ git clone https://github.com/DHANUSHREEPGOWDA/Grama-Khata.git
 ```
 
 ### Step 2 — Open in Android Studio
-1. File → Open → Select the `Grama-Khata` folder
+1. File → Open → Select the Grama-Khata folder
 2. Wait for Gradle sync to complete
 
 ### Step 3 — Add your Gemini API key
@@ -150,7 +174,7 @@ Get your free key from: https://aistudio.google.com/app/apikey
 
 ### Step 4 — Run the app
 - Connect your Android phone (USB Debugging ON) or use an emulator
-- Click **Run ▶** in Android Studio
+- Click Run in Android Studio
 - Minimum SDK: Android 7.0 (API 24)
 
 ---
@@ -158,7 +182,7 @@ Get your free key from: https://aistudio.google.com/app/apikey
 ## How AI Works (Gemini)
 
 ### WhatsApp Reminder
-When you tap **WhatsApp** on a customer with pending due:
+When you tap WhatsApp on a customer with pending due:
 1. App sends customer name + due amount to Gemini API
 2. Gemini generates a polite reminder message in English
 3. App opens WhatsApp with the message pre-filled and ready to send
@@ -166,7 +190,7 @@ When you tap **WhatsApp** on a customer with pending due:
 ### Daily Collection Report
 1. Go to Dashboard tab
 2. Enter your shop name
-3. Tap **Generate AI Daily Report**
+3. Tap Generate AI Daily Report
 4. Gemini analyzes all pending dues and generates a full summary
 
 ---
@@ -210,7 +234,7 @@ When you tap **WhatsApp** on a customer with pending due:
 Final Year ECE Student
 GSSS Institute of Engineering and Technology for Women, Mysore
 
-Developed as part of **Mindmatrix Pro Internship Program**
+Developed as part of Mindmatrix  Internship Program
 Project 68 — Android App Development using GenAI
 
 ---
