@@ -1,27 +1,37 @@
+
 # Grama Khata — Digital Micro Finance Ledger
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Android-green?style=for-the-badge&logo=android" />
   <img src="https://img.shields.io/badge/Language-Kotlin-blue?style=for-the-badge&logo=kotlin" />
   <img src="https://img.shields.io/badge/Architecture-MVVM-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/AI-Gemini%202.0%20Flash-red?style=for-the-badge&logo=google" />
+  <img src="https://img.shields.io/badge/AI-Gemini%201.5%20Flash-red?style=for-the-badge&logo=google" />
   <img src="https://img.shields.io/badge/Database-Room%20DB-purple?style=for-the-badge" />
 </p>
+
+> **Project 68 | Android App Development using GenAI**
+> Mindmatrix Pro Internship Program
 
 ---
 
 ## About the Project
 
-**Grama Khata** is an Android application that digitizes the traditional credit management system used by small village shopkeepers in rural Karnataka. It replaces physical "Vahi" (credit books) with a simple, offline-first digital ledger.
+**Grama Khata** is an Android application that digitizes the traditional credit management system used by small village shopkeepers in rural Karnataka. It replaces physical *"Vahi"* (credit books) with a simple, offline-first digital ledger — with AI-powered daily reports and WhatsApp payment reminders.
 
-> Project 68 | Android App Development using GenAI
-> Mindmatrix Pro Internship Program
+---
+
+## Screenshots
+
+
+<p align="center">
+  <em>Customer List &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Customer Detail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dashboard</em>
+</p>
 
 ---
 
 ## Problem Statement
 
-Small grocery stores in villages still use physical "Vahi" books to track customer credit. When these books get damaged or lost, it causes:
+Small grocery stores in villages still use physical *"Vahi"* books to track customer credit. When these books get damaged or lost, it causes:
 - Financial loss and disputes between shopkeeper and customer
 - No automated balance calculation (manual errors)
 - No reminder system for pending dues
@@ -34,7 +44,7 @@ Small grocery stores in villages still use physical "Vahi" books to track custom
 Grama Khata provides:
 - Simple Give/Take interface (Koduvudu / Tegedukolluvudu)
 - Offline-first storage using Room Database
-- Real-time net balance calculation
+- Real-time net balance calculation per customer
 - AI-generated daily collection reports via Google Gemini
 - One-tap WhatsApp payment reminders
 
@@ -44,45 +54,37 @@ Grama Khata provides:
 
 | Feature | Description |
 |---|---|
-| Customer Management | Add, search, delete customers with initials avatar |
-| Transaction Logging | Simple + (PAID) and - (DUE) buttons |
+| Customer Management | Add/delete customers with name, phone, and initials avatar |
+| Transaction Logging | Simple + (PAID) and − (DUE) buttons for credit/debit |
 | Real-time Balance | Net balance updates instantly after every transaction |
 | Due Dashboard | All customers sorted by highest amount owed |
-| AI Daily Report | Gemini AI generates collection summary |
-| WhatsApp Reminder | AI-generated polite message sent via WhatsApp |
-| Offline First | Works fully without internet for all core features |
-
----
-
-## Screenshots
-
-| Customer List | Customer Detail | Dashboard |
-|---|---|---|
-| All customers with search | Transactions + balance | Dues overview + AI report |
+| AI Daily Report | Gemini AI generates a daily collection summary |
+| WhatsApp Reminder | AI-generated polite reminder sent via WhatsApp |
+| Offline First | All core features work fully without internet |
 
 ---
 
 ## Tech Stack
 
-| Technology | Version | Purpose |
+| Layer | Technology | Version |
 |---|---|---|
-| Kotlin | 2.0.0 | Primary language |
-| Android Studio Panda | 2025.3.1 | IDE |
-| Room Database | 2.6.1 | Local offline storage |
-| ViewModel + LiveData | 2.8.7 | MVVM state management |
-| Navigation Component | 2.8.5 | Fragment navigation |
-| Retrofit | 2.11.0 | HTTP client for AI API |
-| OkHttp | 4.12.0 | Network layer |
-| Kotlin Coroutines | 1.9.0 | Async programming |
-| Material Components | 1.12.0 | UI design system |
-| Gemini 2.0 Flash | Latest | AI report generation |
+| Language | Kotlin | 2.0.0 |
+| Architecture | MVVM | — |
+| Local Database | Room DB | 2.6.1 |
+| State Management | LiveData + ViewModel | 2.7.0 |
+| AI Feature | Google Gemini 1.5 Flash API | Latest |
+| HTTP Client | Retrofit | 2.9.0 |
+| Async | Kotlin Coroutines | 1.7.3 |
+| UI | Material Components | 1.11.0 |
+| Navigation | Jetpack Navigation Component | 2.7.6 |
+| WhatsApp | Intent.ACTION_VIEW | — |
 
 ---
 
 ## Architecture
 
 ```
-UI Layer (Fragments)
+UI Layer (Fragments + Activities)
         ↕
 ViewModel Layer (Business Logic)
         ↕
@@ -96,7 +98,7 @@ Room DB (Local) + Gemini AI API (Cloud)
 ## Project Structure
 
 ```
-com.example.mygramkata/
+com.gramakhata/
 ├── data/
 │   ├── entity/          → Customer.kt, Transaction.kt
 │   ├── dao/             → CustomerDao.kt, TransactionDao.kt
@@ -118,63 +120,54 @@ com.example.mygramkata/
 ## Setup Instructions
 
 ### Prerequisites
-- Android Studio Panda (2025.3.1) or later
-- Android device or emulator (API 24+)
-- Google Gemini API key (free from https://aistudio.google.com)
+- Android Studio (Panda 2025.3.1 or later)
+- Android device or emulator (API 24+, Android 7.0 minimum)
+- Google Gemini API key — free from [aistudio.google.com](https://aistudio.google.com/app/apikey)
 
-### Steps
-
-**1. Clone the repository**
+### Step 1 — Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/GramaKhata.git
+git clone https://github.com/DHANUSHREEPGOWDA/Grama-Khata.git
 ```
 
-**2. Open in Android Studio**
-- File → Open → Select GramaKhata folder
-- Wait for Gradle sync to complete
+### Step 2 — Open in Android Studio
+1. File → Open → Select the `Grama-Khata` folder
+2. Wait for Gradle sync to complete
 
-**3. Add your Gemini API key**
-
-Open `app/src/main/java/com/example/mygramkata/data/repository/AiRepository.kt`
-
+### Step 3 — Add your Gemini API key
+Open this file:
+```
+app/src/main/java/com/gramakhata/data/repository/AiRepository.kt
+```
+Replace the placeholder:
 ```kotlin
 private val API_KEY = "YOUR_GEMINI_API_KEY_HERE"
 ```
+With your actual key:
+```kotlin
+private val API_KEY = "AIza..."
+```
+Get your free key from: https://aistudio.google.com/app/apikey
 
-Get your free API key from: https://aistudio.google.com/app/apikey
-
-**4. Run the app**
-- Connect Android device with USB Debugging ON
-- Click Run ▶ in Android Studio
+### Step 4 — Run the app
+- Connect your Android phone (USB Debugging ON) or use an emulator
+- Click **Run ▶** in Android Studio
 - Minimum SDK: Android 7.0 (API 24)
 
 ---
 
-## How It Works
-
-### Adding a Customer
-1. Open app → Customers tab
-2. Tap green + button
-3. Enter name and phone → Save
-
-### Recording a Transaction
-1. Tap on a customer
-2. Tap **+ PAID** when customer pays money
-3. Tap **− DUE** when customer takes goods on credit
-4. Enter amount → Save
-5. Balance updates instantly!
+## How AI Works (Gemini)
 
 ### WhatsApp Reminder
-1. Open customer with pending due
-2. Tap **WhatsApp** button
-3. AI generates polite reminder
-4. WhatsApp opens with pre-filled message
+When you tap **WhatsApp** on a customer with pending due:
+1. App sends customer name + due amount to Gemini API
+2. Gemini generates a polite reminder message in English
+3. App opens WhatsApp with the message pre-filled and ready to send
 
-### AI Daily Report
+### Daily Collection Report
 1. Go to Dashboard tab
 2. Enter your shop name
 3. Tap **Generate AI Daily Report**
-4. Gemini AI analyzes all dues and generates summary
+4. Gemini analyzes all pending dues and generates a full summary
 
 ---
 
@@ -186,7 +179,7 @@ Get your free API key from: https://aistudio.google.com/app/apikey
 | id | INTEGER (PK) | Auto-generated ID |
 | name | TEXT | Customer name |
 | phone | TEXT | Phone number |
-| photoUri | TEXT | Optional photo |
+| photoUri | TEXT | Optional profile photo |
 | createdAt | LONG | Creation timestamp |
 
 ### transactions table
@@ -195,7 +188,7 @@ Get your free API key from: https://aistudio.google.com/app/apikey
 | id | INTEGER (PK) | Auto-generated ID |
 | customerId | INTEGER (FK) | References customers.id |
 | amount | DOUBLE | Transaction amount |
-| type | ENUM | CREDIT or DEBIT |
+| type | ENUM | CREDIT (paid) or DEBIT (due) |
 | note | TEXT | Optional note |
 | timestamp | LONG | Transaction timestamp |
 
@@ -205,19 +198,19 @@ Get your free API key from: https://aistudio.google.com/app/apikey
 
 - [x] Net Due updates instantly after every transaction
 - [x] AI Daily Collection Report generated successfully
-- [x] UI usable with one hand (large buttons)
-- [x] Works fully offline (Room DB)
-- [x] WhatsApp integration with AI message
+- [x] UI usable with one hand (large buttons, clear layout)
+- [x] Works fully offline — Room DB (except AI features)
+- [x] WhatsApp integration with one-tap AI-generated message
 
 ---
 
 ## Developer
 
-**Dhanushree**
+**Dhanushree P Gowda**
 Final Year ECE Student
 GSSS Institute of Engineering and Technology for Women, Mysore
 
-Developed as part of **Mindmatrix  Internship Program**
+Developed as part of **Mindmatrix Pro Internship Program**
 Project 68 — Android App Development using GenAI
 
 ---
