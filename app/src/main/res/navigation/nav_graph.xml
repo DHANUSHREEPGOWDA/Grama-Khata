@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/customerListFragment">
+
+    <fragment
+        android:id="@+id/customerListFragment"
+        android:name="com.gramakhata.ui.customers.CustomerListFragment"
+        android:label="Customers">
+
+        <action
+            android:id="@+id/action_customerList_to_customerDetail"
+            app:destination="@id/customerDetailFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/customerDetailFragment"
+        android:name="com.gramakhata.ui.customers.CustomerDetailFragment"
+        android:label="Customer Detail">
+
+        <argument
+            android:name="customerId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.gramakhata.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"/>
+
+</navigation>
